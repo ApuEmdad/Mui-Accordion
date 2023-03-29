@@ -6,13 +6,13 @@ import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
-import onlineMeeting from "../assets/online-meeting.png";
-import checked from "../assets/checked-1.png";
-import info from "../assets/INFO-1.png";
+import onlineMeeting from "../../assets/online-meeting.png";
+import checked from "../../assets/checked-1.png";
+import info from "../../assets/INFO-1.png";
 
 const MuiAccordion = () => {
   return (
-    <div style={{ width: "70%" }}>
+    <div>
       <Accordion sx={{ padding: "20px" }}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
           <Grid container spacing={2}>
