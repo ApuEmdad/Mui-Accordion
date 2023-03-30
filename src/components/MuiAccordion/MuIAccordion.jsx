@@ -9,61 +9,75 @@ import { Box } from "@mui/system";
 import onlineMeeting from "../../assets/online-meeting.png";
 import checked from "../../assets/checked-1.png";
 import info from "../../assets/INFO-1.png";
+import styled from "@emotion/styled";
 
 const MuiAccordion = () => {
+  const xsBreakpoint = "600px";
+  const mdBreakpoint = "960px";
+  const ImageContainer = styled(Box)({
+    backgroundColor: "#C6E9EB",
+    borderRadius: "50%",
+    width: "96px",
+    height: "96px",
+    [`@media (max-width: ${xsBreakpoint})`]: {
+      width: "48px",
+      height: "48px",
+    },
+    [`@media (min-width: ${mdBreakpoint})`]: {
+      width: "96px",
+      height: "96px",
+    },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  });
+
+  const Title = styled(Typography)({
+    textAlign: "left",
+    color: "#222221",
+    fontWeight: "700",
+    fontSize: "22px",
+  });
+
+  const Desc = styled(Typography)({
+    textAlign: "left",
+    color: "#222221",
+    fontSize: "16px",
+  });
+
+  const SummaryImageContainer = styled(Box)({
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  });
+
+  const ResponsiveGrid = styled(Grid)({
+    display: "block",
+    [`@media (max-width: ${xsBreakpoint})`]: {
+      display: "none",
+    },
+  });
+
   return (
     <div>
       <Accordion sx={{ padding: "20px" }}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
           <Grid container spacing={2}>
             <Grid item xs={3}>
-              <Box
-                sx={{
-                  backgroundColor: "#C6E9EB",
-                  borderRadius: "50%",
-                  width: {
-                    md: "96px",
-                    xs: "48px",
-                  },
-                  height: {
-                    md: "96px",
-                    xs: "48px",
-                  },
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <ImageContainer>
                 <img src={onlineMeeting} alt="" />
-              </Box>
+              </ImageContainer>
             </Grid>
             <Grid item xs={9}>
               <Box>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: "22px",
-                    textAlign: "left",
-                    color: "#222221",
-                    fontWeight: "700",
-                  }}
-                >
-                  Application Status
-                </Typography>
+                <Title> Application Status</Title>
               </Box>
               <Box>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    fontSize: "16px",
-                    textAlign: "left",
-                    color: "#222221",
-                  }}
-                >
+                <Desc>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat,
-                </Typography>
+                </Desc>
               </Box>
             </Grid>
           </Grid>
@@ -72,230 +86,95 @@ const MuiAccordion = () => {
         <AccordionDetails>
           {/* Registration starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid
-              item
-              md={3}
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "block",
-                },
-              }}
-            ></Grid>
+            <ResponsiveGrid item md={3} />
             <Grid container item md={9}>
               <Grid item xs={2}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
+                <SummaryImageContainer>
                   <img src={checked} alt="" />
-                </Box>
+                </SummaryImageContainer>
               </Grid>
               <Grid item xs={10}>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "22px",
-                      textAlign: "left",
-                      color: "#222221",
-                      fontWeight: "700",
-                      lineHeight: 1,
-                    }}
-                  >
-                    Registration
-                  </Typography>
+                  <Title sx={{ lineHeight: 1 }}>Registration</Title>
                 </Box>
                 <Box>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: "16px",
-                      textAlign: "left",
-                      color: "#222221",
-                    }}
-                  >
+                  <Desc>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
                     aliquyam erat,
-                  </Typography>
+                  </Desc>
                 </Box>
               </Grid>
             </Grid>
           </Grid>
           {/* Registration ends */}
-
           {/* Form Submit starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid
-              item
-              md={3}
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "block",
-                },
-              }}
-            ></Grid>
+            <ResponsiveGrid item md={3} />
             <Grid container item md={9}>
               <Grid item xs={2}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
+                <SummaryImageContainer>
                   <img src={checked} alt="" />
-                </Box>
+                </SummaryImageContainer>
               </Grid>
               <Grid item xs={10}>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "22px",
-                      textAlign: "left",
-                      color: "#222221",
-                      fontWeight: "700",
-                      lineHeight: 1,
-                    }}
-                  >
-                    Form Submit
-                  </Typography>
+                  <Title sx={{ lineHeight: 1 }}>Form Submit</Title>
                 </Box>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "16px",
-                      textAlign: "left",
-                      color: "#222221",
-                    }}
-                  >
+                  <Desc>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
                     aliquyam erat,
-                  </Typography>
+                  </Desc>
                 </Box>
               </Grid>
             </Grid>
           </Grid>
           {/* Form Submit ends */}
-
           {/* Verification Starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid
-              item
-              md={3}
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "block",
-                },
-              }}
-            ></Grid>
+            <ResponsiveGrid item md={3} />
             <Grid container item md={9}>
               <Grid item xs={2}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
+                <SummaryImageContainer>
                   <img src={info} alt="" />
-                </Box>
+                </SummaryImageContainer>
               </Grid>
               <Grid item xs={10}>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "22px",
-                      textAlign: "left",
-                      color: "#222221",
-                      fontWeight: "700",
-                      lineHeight: 1,
-                    }}
-                  >
-                    Verification
-                  </Typography>
+                  <Title sx={{ lineHeight: 1 }}>Verification</Title>
                 </Box>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "16px",
-                      textAlign: "left",
-                      color: "#222221",
-                    }}
-                  >
+                  <Desc>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
                     aliquyam erat,
-                  </Typography>
+                  </Desc>
                 </Box>
               </Grid>
             </Grid>
           </Grid>
           {/* Verification ends */}
-
           {/* Payment starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid
-              item
-              md={3}
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "block",
-                },
-              }}
-            ></Grid>
+            <ResponsiveGrid item md={3} />
             <Grid container item md={9}>
               <Grid item xs={2}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
+                <SummaryImageContainer>
                   <img src={info} alt="" />
-                </Box>
+                </SummaryImageContainer>
               </Grid>
               <Grid item xs={10}>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "22px",
-                      textAlign: "left",
-                      color: "#222221",
-                      fontWeight: "700",
-                      lineHeight: 1,
-                    }}
-                  >
-                    Payment
-                  </Typography>
+                  <Title sx={{ lineHeight: 1 }}>Payment</Title>
                 </Box>
                 <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "16px",
-                      textAlign: "left",
-                      color: "#222221",
-                    }}
-                  >
+                  <Desc>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
                     aliquyam erat,
-                  </Typography>
+                  </Desc>
                 </Box>
               </Grid>
             </Grid>

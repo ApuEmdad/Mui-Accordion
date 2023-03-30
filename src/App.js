@@ -9,7 +9,7 @@ import MyProfile from "./components/MyProfile/MyProfile";
 function App() {
   return (
     <div className="App">
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item md={3}>
           <MyProfile />
         </Grid>

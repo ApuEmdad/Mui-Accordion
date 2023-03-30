@@ -3,8 +3,12 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import PhoneInTalkRoundedIcon from "@mui/icons-material/PhoneInTalkRounded";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
+import { height } from "@mui/system";
 
 const MyProfile = () => {
+  const xsBreakpoint = "600px";
+  const mdBreakpoint = "960px";
+
   const LogOutButton = styled(Button)({
     textTransform: "none",
     fontSize: 16,
@@ -21,10 +25,42 @@ const MyProfile = () => {
       fontWeight: "bold",
     },
   });
+
+  const PaperContainer = styled(Paper)({
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    width: "100vw",
+    height: "inherit",
+    [`@media (min-width: ${mdBreakpoint})`]: {
+      width: "inherit",
+      height: "80vh",
+    },
+  });
+
+  const Name = styled(Typography)({
+    fontSize: "20px",
+    color: "#222221",
+    fontWeight: "700",
+  });
+
+  const Phone = styled(Typography)({
+    fontSize: "16px",
+    color: "#222221",
+  });
+
+  const LogOutCOntainer = styled(Box)({
+    display: "none",
+    paddingBottom: "20px",
+    [`@media (min-width: ${xsBreakpoint})`]: {
+      display: "block",
+    },
+  });
+
   return (
-    <Paper
+    <PaperContainer
       sx={{
-        textAlign: "center",
         width: {
           xs: "100vw",
           md: "inherit",
@@ -33,53 +69,22 @@ const MyProfile = () => {
           xs: "inherit",
           md: "80vh",
         },
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
       }}
     >
       <Box>
         <Grid container>
           <Grid item md={12} xs={6}>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "20px",
-
-                color: "#222221",
-                fontWeight: "700",
-              }}
-            >
-              Francesca Lai
-            </Typography>
+            <Name>Francesca Lai</Name>
           </Grid>
           <Grid item md={12} xs={6}>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "16px",
-                color: "#222221",
-              }}
-            >
-              +55 000 222 444
-            </Typography>
+            <Phone>+55 000 222 444</Phone>
           </Grid>
         </Grid>
       </Box>
-
-      <Box
-        md={12}
-        sx={{
-          display: {
-            xs: "none",
-            md: "block",
-          },
-          paddingBottom: "20px",
-        }}
-      >
+      <LogOutCOntainer>
         <LogOutButton variant="contained">Log Out</LogOutButton>
-      </Box>
-    </Paper>
+      </LogOutCOntainer>
+    </PaperContainer>
   );
 };
 
