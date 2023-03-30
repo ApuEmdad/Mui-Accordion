@@ -21,8 +21,14 @@ const MuiAccordion = () => {
                 sx={{
                   backgroundColor: "#C6E9EB",
                   borderRadius: "50%",
-                  width: "96px",
-                  height: "96px",
+                  width: {
+                    md: "96px",
+                    xs: "48px",
+                  },
+                  height: {
+                    md: "96px",
+                    xs: "48px",
+                  },
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -66,8 +72,17 @@ const MuiAccordion = () => {
         <AccordionDetails>
           {/* Registration starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid item xs={3}></Grid>
-            <Grid container item xs={9}>
+            <Grid
+              item
+              md={3}
+              sx={{
+                display: {
+                  xs: "none",
+                  md: "block",
+                },
+              }}
+            ></Grid>
+            <Grid container item md={9}>
               <Grid item xs={2}>
                 <Box
                   sx={{
@@ -115,8 +130,17 @@ const MuiAccordion = () => {
 
           {/* Form Submit starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid item xs={3}></Grid>
-            <Grid container item xs={9}>
+            <Grid
+              item
+              md={3}
+              sx={{
+                display: {
+                  xs: "none",
+                  md: "block",
+                },
+              }}
+            ></Grid>
+            <Grid container item md={9}>
               <Grid item xs={2}>
                 <Box
                   sx={{
@@ -164,8 +188,17 @@ const MuiAccordion = () => {
 
           {/* Verification Starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid item xs={3}></Grid>
-            <Grid container item xs={9}>
+            <Grid
+              item
+              md={3}
+              sx={{
+                display: {
+                  xs: "none",
+                  md: "block",
+                },
+              }}
+            ></Grid>
+            <Grid container item md={9}>
               <Grid item xs={2}>
                 <Box
                   sx={{
@@ -213,8 +246,17 @@ const MuiAccordion = () => {
 
           {/* Payment starts */}
           <Grid container spacing={2} marginBottom="1rem">
-            <Grid item xs={3}></Grid>
-            <Grid container item xs={9}>
+            <Grid
+              item
+              md={3}
+              sx={{
+                display: {
+                  xs: "none",
+                  md: "block",
+                },
+              }}
+            ></Grid>
+            <Grid container item md={9}>
               <Grid item xs={2}>
                 <Box
                   sx={{
