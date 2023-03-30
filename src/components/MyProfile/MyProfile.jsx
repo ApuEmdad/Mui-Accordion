@@ -6,9 +6,27 @@ import Button from "@mui/material/Button";
 import { height } from "@mui/system";
 
 const MyProfile = () => {
-  const xsBreakpoint = "600px";
-  const mdBreakpoint = "960px";
+  const mdBreakpoint = "900px";
 
+  const PaperContainer = styled(Paper)({
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    width: "inherit",
+    height: "80vh",
+    [`@media (max-width: ${mdBreakpoint})`]: {
+      width: "100vw",
+      height: "inherit",
+    },
+  });
+  const LogOutContainer = styled(Box)({
+    display: "block",
+    paddingBottom: "20px",
+    [`@media (max-width: ${mdBreakpoint})`]: {
+      display: "none",
+    },
+  });
   const LogOutButton = styled(Button)({
     textTransform: "none",
     fontSize: 16,
@@ -26,19 +44,6 @@ const MyProfile = () => {
     },
   });
 
-  const PaperContainer = styled(Paper)({
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    width: "inherit",
-    height: "80vh",
-    [`@media (max-width: ${xsBreakpoint})`]: {
-      width: "100vw",
-      height: "inherit",
-    },
-  });
-
   const Name = styled(Typography)({
     fontSize: "20px",
     color: "#222221",
@@ -48,14 +53,6 @@ const MyProfile = () => {
   const Phone = styled(Typography)({
     fontSize: "16px",
     color: "#222221",
-  });
-
-  const LogOutContainer = styled(Box)({
-    display: "none",
-    paddingBottom: "20px",
-    [`@media (min-width: ${xsBreakpoint})`]: {
-      display: "block",
-    },
   });
 
   return (
