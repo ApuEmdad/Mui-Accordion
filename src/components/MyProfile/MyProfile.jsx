@@ -68,7 +68,6 @@ const MyProfile = () => {
       </Box>
 
       <Box
-        item
         md={12}
         sx={{
           display: {
