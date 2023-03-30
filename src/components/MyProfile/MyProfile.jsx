@@ -31,11 +31,11 @@ const MyProfile = () => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    width: "100vw",
-    height: "inherit",
-    [`@media (min-width: ${mdBreakpoint})`]: {
-      width: "inherit",
-      height: "80vh",
+    width: "inherit",
+    height: "80vh",
+    [`@media (max-width: ${xsBreakpoint})`]: {
+      width: "100vw",
+      height: "inherit",
     },
   });
 
@@ -50,7 +50,7 @@ const MyProfile = () => {
     color: "#222221",
   });
 
-  const LogOutCOntainer = styled(Box)({
+  const LogOutContainer = styled(Box)({
     display: "none",
     paddingBottom: "20px",
     [`@media (min-width: ${xsBreakpoint})`]: {
@@ -59,18 +59,7 @@ const MyProfile = () => {
   });
 
   return (
-    <PaperContainer
-      sx={{
-        width: {
-          xs: "100vw",
-          md: "inherit",
-        },
-        height: {
-          xs: "inherit",
-          md: "80vh",
-        },
-      }}
-    >
+    <PaperContainer>
       <Box>
         <Grid container>
           <Grid item md={12} xs={6}>
@@ -81,9 +70,9 @@ const MyProfile = () => {
           </Grid>
         </Grid>
       </Box>
-      <LogOutCOntainer>
+      <LogOutContainer>
         <LogOutButton variant="contained">Log Out</LogOutButton>
-      </LogOutCOntainer>
+      </LogOutContainer>
     </PaperContainer>
   );
 };
